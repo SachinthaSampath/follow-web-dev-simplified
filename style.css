@@ -1,0 +1,21 @@
+.card {
+  width: 200px;
+  border: 1px solid black;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.body {
+  height: 0;
+  transition: height 0.5s;
+  overflow: hidden;
+}
+
+.body.show {
+  height: auto;
+  height: calc-size(auto);
+}
