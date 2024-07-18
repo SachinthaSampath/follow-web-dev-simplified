@@ -1,3 +1,4 @@
+/* calc-size() */
 .card {
   width: 200px;
   border: 1px solid black;
@@ -17,5 +18,56 @@
 
 .body.show {
   height: auto;
+  /* no browser supports at the moment */
   height: calc-size(auto);
+}
+
+/* starting style  */
+
+/* animate box */
+.box {
+  background-color: red;
+  height: 100px;
+  width: 100px;
+  animation: grow 1s forwards;
+}
+
+@keyframes grow {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 0.5;
+  }
+}
+
+/* animate display property */
+.start-box {
+  background-color: red;
+  height: 100px;
+  width: 100px;
+  transition: scale 1s;
+  scale: 0.5;
+  @starting-style {
+    scale: 0;
+  }
+}
+
+.box-div {
+  display: none;
+  background-color: red;
+  height: 100px;
+  width: 100px;
+  transition: display 1s, translate 1s;
+
+  transition-behavior: allow-discrete;
+  translate: -20px;
+}
+.box-div.show {
+  display: block;
+  translate: 0;
+
+  @starting-style {
+    translate: 20px;
+  }
 }
